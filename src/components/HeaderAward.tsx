@@ -3,10 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useI18n, languages } from "./I18nProvider";
-import Button from './Button';
 import ButtonNotified from "./ButtonNotified";
 
-function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroundColor?: string, logoWhite?: boolean }) {
+function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { backgroundColor?: string, logoWhite?: boolean }) {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -89,7 +88,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
     <header className={`w-full z-50 transition-all duration-300 ${
       isScrolled 
         ? 'fixed top-0 left-0 bg-white pt-4 shadow-lg border-b border-gray-200/50 sm:px-8' 
-        : `${backgroundColor} mt-6 mx-auto sm:px-8`
+        : `${backgroundColor} mt-6 mx-auto sm:px-8 border-b border-gray-900/10 shadow-2xl`
     }`}>
       <div className="px-12 2xl:px-6 max-w-[1570px] mx-auto w-full">
         {!isScrolled && (
@@ -150,7 +149,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
         >
           <Link href="/" className="flex items-center gap-3">
             <Image 
-              src={isScrolled ? "/logo.png" : (logoWhite ? "/logo_branco.png" : "/logo.png")} 
+              src="/logo_award.png" 
               alt="GCFC Logo" 
               width={220} 
               height={72}
@@ -195,14 +194,14 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
               href="/notification"
               padding='px-4 py-2'
               borderRadius="rounded-full"
-              className="hidden lg:block text-zinc-900 shadow-lg"
+              className="hidden lg:block text-zinc-900 font-medium text-base"
             />
-            <Button
+            <ButtonNotified
               text="CONQUISTE A CERTIFICAÇÃO"
               href="/certification"
               padding='px-4 py-2'
               borderRadius="rounded-full"
-              className="hidden lg:block text-white text-base font-bold shadow-lg"
+              className="hidden lg:block text-zinc-900 text-base font-medium"
             />
           </div>
 
@@ -240,7 +239,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
             <div className="p-6">
               <div className="flex justify-between items-center mb-8">
                 <Image 
-                  src="/logo.png" 
+                  src="/logo_award.png" 
                   alt="GCFC Logo" 
                   width={180} 
                   height={50} 
@@ -327,18 +326,18 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
 
               {/* Mobile CTA Button */}
                 <ButtonNotified
-                  text="FUI NOTIFICADO"
-                  href="/notification"
-                  padding='px-4 py-2'
-                  borderRadius="rounded-full"
-                  className="hidden lg:block text-zinc-900 shadow-lg"
+                    text="FUI NOTIFICADO"
+                    href="/notification"
+                    padding='px-4 py-2'
+                    borderRadius="rounded-full"
+                    className="hidden lg:block text-zinc-900 font-medium text-base"
                 />
-                <Button
-                  text="CONQUISTE A CERTIFICAÇÃO"
-                  href="/certification"
-                  padding='px-4 py-2'
-                  borderRadius="rounded-full"
-                  className="hidden lg:block text-white text-base font-bold shadow-lg"
+                <ButtonNotified
+                    text="CONQUISTE A CERTIFICAÇÃO"
+                    href="/certification"
+                    padding='px-4 py-2'
+                    borderRadius="rounded-full"
+                    className="hidden lg:block text-zinc-900 text-base font-medium"
                 />
             </div>
           </div>
@@ -348,4 +347,4 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
   );
 }
 
-export default Header; 
+export default HeaderAward; 

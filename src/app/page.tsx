@@ -137,8 +137,8 @@ export default function Home() {
             <Button text="SAIBA MAIS" href="/certification" padding='py-6 px-28' borderRadius="rounded-4xl" className="hidden lg:block text-white text-2xl font-bold shadow-lg mt-10" />
           </section>
 
-          <section className="my-8">
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-4 font-heading uppercase">Empresas certificadas</h2>
+          <section className="my-8 bg-gray-100 py-32">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl text-center text-[#6a0080] mb-4 font-heading uppercase">Empresas certificadas</h2>
             <p className="text-black text-sm sm:text-xl font-open-sans text-center">Conheça algumas das empresas certificadas pela GCFC</p>
             <div className="flex flex-col sm:flex-row items-center justify-center mt-10 gap-6">
               <div className="flex flex-col items-center gap-3 sm:gap-4 min-w-[150px] sm:min-w-[180px]">
@@ -198,8 +198,8 @@ export default function Home() {
             <Button text="SAIBA MAIS" href="/awards" padding='py-6 px-28' borderRadius="rounded-4xl" className="hidden lg:block text-white text-2xl font-bold shadow-lg mt-10" />
           </section>
 
-          <section className="my-8">
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-4 font-heading uppercase">Certificação</h2>
+          <section className="my-8 bg-gray-100 py-20">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-4 font-heading uppercase">Certificação X Premiação</h2>
             <p className="text-black text-sm sm:text-xl font-open-sans text-center">Descubra a diferença entre a Certificação e a Premiação</p>
             <div className="flex flex-col sm:flex-row items-center justify-center mt-10 gap-40">
               <div className="flex flex-col items-center gap-3 sm:gap-4 min-w-[150px] sm:min-w-[180px]">
@@ -273,16 +273,16 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="max-w-[1480px] mx-auto flex flex-col sm:flex-row items-start justify-center bg-[#6a0080] text-white p-12 rounded-lg">
+          <section className="max-w-[1480px] mx-auto flex flex-col sm:flex-row items-start justify-center bg-[#6a0080] text-white p-12 rounded-xl">
             <div className="flex-shrink-0">
-              <Image src="/imagem_20.png" alt="GCFC Building" width={500} height={300} className="rounded-lg" />
+              <Image src="/imagem_20.png" alt="GCFC Building" width={500} height={300} className="rounded-lg object-contain" />
             </div>
-            <div className="sm:ml-8 mt-4 sm:mt-0">
-              <h2 className="text-2xl font-bold mb-16">SOBRE A GCFC</h2>
-              <p className="text-sm sm:text-lg mb-8">
+            <div className="sm:ml-8 mt-4 sm:mt-8">
+              <h2 className="text-2xl font-bold mb-12">SOBRE A GCFC</h2>
+              <p className="text-sm sm:text-lg mb-4">
                 A GCFC – Great Company for Consumers é uma organização global que identifica e reconhece empresas que se destacam na qualidade do atendimento.
               </p>
-              <p className="text-sm sm:text-lg mb-8">
+              <p className="text-sm sm:text-lg mb-4">
                 Presente em todos os continentes do mundo, nosso trabalho é avaliar, de forma criteriosa e imparcial, o atendimento, a transparência e o compromisso das empresas com seus consumidores.
               </p>
               <p className="text-sm sm:text-lg">
@@ -291,27 +291,27 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="my-8 max-w-[1480px] mx-auto">
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-4 font-heading uppercase">Conecte-se conosco</h2>
-            <p className="text-black text-sm sm:text-xl font-open-sans text-center mb-8">Fale com nosso time através de nossos canais oficiais</p>
+          <section className="my-20 max-w-[1480px] mx-auto">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-8 font-heading uppercase">Conecte-se conosco</h2>
+            <p className="text-black text-sm sm:text-base font-open-sans text-center mb-16">Fale com nosso time através de nossos canais oficiais</p>
             <div className="flex flex-col sm:flex-row justify-center gap-8">
               <div className="flex flex-row items-center">
-                <div className="h-full max-h-[233px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-bold mb-2">TRABALHE NA GCFC</p>
+                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
+                  <p className="text-2xl font-semibold mb-2 w-32">TRABALHE NA GCFC</p>
                   <p className="text-base text-left">Faça parte do nosso time: <strong>people@gcfc.global</strong></p>
                 </div>
                 <Image src="/imagem_21.png" alt="Trabalhe na GCFC" width={300} height={200} />
               </div>
               <div className="flex flex-row items-center">
-                <div className="h-full max-h-[233px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-bold mb-2">IMPRENSA E MÍDIA</p>
+                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
+                  <p className="text-2xl font-semibold mb-2 w-32">IMPRENSA E MÍDIA</p>
                   <p className="text-base text-left">Assessoria de imprensa: <strong>press@gcfc.global</strong></p>
                 </div>
                 <Image src="/imagem_22.png" alt="Imprensa e Mídia" width={300} height={200} />
               </div>
               <div className="flex flex-row items-center">
-                <div className="h-full max-h-[233px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-bold mb-2">FALE COM A GENTE</p>
+                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
+                  <p className="text-2xl font-semibold mb-2 w-32">FALE COM A GENTE</p>
                   <p className="text-base text-left">Central de Atendimento: <strong>info@gcfc.global</strong></p>
                 </div>
                 <Image src="/imagem_23.png" alt="Fale com a Gente" width={300} height={200} />

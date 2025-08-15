@@ -10,14 +10,14 @@ function Footer() {
   const currentSocialMedia = socialMedias.find(media => media.idioma === language.flag) || socialMedias[0];
 
   return (
-    <footer className="w-full bg-[#b300b3] text-white mt-12 sm:mt-16 pt-8 sm:pt-10 pb-4 text-xs sm:text-sm font-open-sans p-2">
+    <footer className="w-full bg-gray-800 text-white mt-12 sm:mt-16 pt-8 sm:pt-10 pb-4 text-xs sm:text-sm font-open-sans p-2">
       <div className="max-w-[1680px] mx-auto px-20">
         <div className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-8">
           <div className="flex flex-1 flex-col sm:flex-row justify-between gap-6 sm:gap-8 text-center md:text-left">
             <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[150px]">
               <span className="font-bold text-sm sm:text-base mb-1 font-heading">INSTITUCIONAL</span>
               <a href="/about-us" className="hover:underline text-xs sm:text-sm font-open-sans">Sobre o GCFC</a>
-              <a href="/evaluation" className="hover:underline text-xs sm:text-sm font-open-sans">Entenda a Certificação</a>
+              <a href="/award" className="hover:underline text-xs sm:text-sm font-open-sans">Entenda a Certificação</a>
               <a href="/notification" className="hover:underline text-xs sm:text-sm font-open-sans">Fui Notificado por E-mail</a>
             </div>
             <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[150px]">
