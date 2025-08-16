@@ -1,10 +1,11 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { translations } from './Translations';
+import { translations } from '../locales';
+import type { LanguageCode } from '../locales/types';
 
 export type Language = {
-  code: string;
+  code: LanguageCode;
   label: string;
   flag: string;
 };
