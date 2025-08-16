@@ -70,20 +70,22 @@ const FormGlobal = ({ title }: { title: string }) => {
 
   return (
     <section id="form" className="relative my-20">
-        <div className="py-20 bg-gray-50 max-w-[1480px] mx-auto rounded-4xl h-screen max-h-[480px]">
+        <div className="py-20 bg-gray-50 max-w-[1480px] mx-auto rounded-4xl min-h-[480px] lg:min-h-[600px]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col items-center justify-center max-w-lg">
-                    <div className="space-y-6 h-full w-full mt-10">
-                        <h2 className="text-3xl lg:text-4xl font-bold text-black leading-tight">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 h-full">
+                    {/* Texto e título - em telas menores fica acima */}
+                    <div className="space-y-6 text-center lg:text-left lg:w-1/2 order-1 lg:order-1 lg:py-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                             {title}
                         </h2>
-                        <p className="text-lg text-gray-700 leading-relaxed">
+                        <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                             {t("form.subtitle")}
                         </p>
                     </div>
 
-                    <div className="bg-white rounded-2xl shadow-xl p-8 max-w-lg w-[480px] absolute right-90 -top-20">
-                        <form onSubmit={handleSubmit} className="space-y-6 p-4">
+                    {/* Formulário - em telas menores fica abaixo */}
+                    <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 w-full max-w-lg lg:w-[480px] order-2 lg:order-2 lg:relative lg:-top-10">
+                        <form onSubmit={handleSubmit} className="space-y-6">
                             {message && (
                               <div className={`p-3 rounded-lg text-sm ${
                                 message.includes('sucesso') || message.includes('successfully')
@@ -105,7 +107,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                                     value={formData.fullName}
                                     onChange={handleInputChange}
                                     required
-                                    className="w-full py-1 pl-2 text-black border border-gray-300 rounded-xl"
+                                    className="w-full py-2 sm:py-3 pl-3 text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 />
                             </div>
 
@@ -120,7 +122,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     required
-                                    className="w-full py-1 pl-2 text-black border border-gray-300 rounded-xl"
+                                    className="w-full py-2 sm:py-3 pl-3 text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 />
                             </div>
 
@@ -135,7 +137,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                                     value={formData.cnpj}
                                     onChange={handleInputChange}
                                     required
-                                    className="w-full py-1 pl-2 text-black border border-gray-300 rounded-xl"
+                                    className="w-full py-2 sm:py-3 pl-3 text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 />
                             </div>
 
@@ -150,7 +152,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                                     value={formData.whatsapp}
                                     onChange={handleInputChange}
                                     required
-                                    className="w-full py-1 pl-2 text-black border border-gray-300 rounded-xl"
+                                    className="w-full py-2 sm:py-3 pl-3 text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 />
                             </div>
 
@@ -163,7 +165,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                                     name="sector"
                                     value={formData.sector}
                                     onChange={handleInputChange}
-                                    className="w-full py-1 pl-2 text-black border border-gray-300 rounded-xl"
+                                    className="w-full py-2 sm:py-3 pl-3 text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                     required
                                 >
                                     <option value=""></option>
@@ -187,7 +189,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                                     name="employees"
                                     value={formData.employees}
                                     onChange={handleInputChange}
-                                    className="w-full py-1 pl-2 text-black border border-gray-300 rounded-xl"
+                                    className="w-full py-2 sm:py-3 pl-3 text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                     required
                                 >
                                     <option value=""></option>
@@ -203,7 +205,7 @@ const FormGlobal = ({ title }: { title: string }) => {
                             <button 
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full text-white text-base font-bold rounded-lg h-12 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors"
+                                className="w-full text-white text-sm sm:text-base font-bold rounded-lg h-12 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors"
                             >
                                 {isLoading ? t("form.button.loading") : t("form.button.submit")}
                             </button>

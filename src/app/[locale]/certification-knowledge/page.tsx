@@ -14,26 +14,26 @@ export default function CertificationKnowledge() {
       <div className="relative z-50 shadow-lg">
         <Header />
       </div>
-        <main className="flex flex-col gap-12 sm:gap-16 lg:gap-20 pt-0 pb-8 sm:pb-12 bg-white min-h-screen">
+        <main className="flex flex-col gap-8 sm:gap-12 lg:gap-16 xl:gap-20 pt-0 pb-8 sm:pb-12 bg-white min-h-screen">
             <section
                 className="max-w-[1580px] mx-auto w-full min-h-screen flex flex-col justify-center overflow-hidden bg-white -mt-20"
             >
                 <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex flex-col lg:flex-row items-center px-8 sm:px-16 lg:px-24 py-16 lg:py-24">
-                        <div className="flex-1 flex flex-col gap-6 lg:gap-8 order-2 lg:order-1">
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl text-black leading-tight font-bold max-w-2xl">
+                    <div className="flex flex-col lg:flex-row items-center px-4 sm:px-8 lg:px-16 xl:px-24 py-12 sm:py-16 lg:py-24">
+                        <div className="flex-1 flex flex-col gap-4 sm:gap-6 lg:gap-8 order-2 lg:order-1">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight font-bold max-w-2xl">
                                 {t("certificationKnowledge.hero.title")}
                             </h1>
-                            <p className="text-base sm:text-lg lg:text-xl text-black max-w-xl leading-relaxed">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black max-w-xl leading-relaxed">
                                 {t("certificationKnowledge.hero.subtitle1")}
                             </p>
-                            <p className="text-base sm:text-lg lg:text-xl text-black max-w-xl leading-relaxed">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black max-w-xl leading-relaxed">
                                 {t("certificationKnowledge.hero.subtitle2")}
                             </p>
                         </div>
                         
                         <div className="flex-1 flex justify-center items-center order-1 lg:order-2">
-                            <div className="relative w-full max-w-lg lg:max-w-2xl">
+                            <div className="relative w-full max-w-sm sm:max-w-lg lg:max-w-2xl">
                                 <Image 
                                     src="/knowledge_01.png" 
                                     alt="Ilustração de certificação GCFC com elementos de reputação e credibilidade" 
@@ -45,46 +45,46 @@ export default function CertificationKnowledge() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="px-4 sm:px-6 lg:px-8">
                     <Image 
                         src="/award_02.png" 
                         alt="publicidade" 
                         width={927} 
                         height={109} 
-                        className="w-[927px] max-w-[1480px] mx-auto object-cover" 
+                        className="w-full max-w-[1480px] mx-auto object-cover" 
                     />
                 </div>
             </section>
 
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-[1580px] mx-auto w-full px-8 sm:px-16 lg:px-24">
-                    <h2 className="text-3xl sm:text-4xl text-black leading-tight font-medium text-center">
+            <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+                <div className="max-w-[1580px] mx-auto w-full px-4 sm:px-8 lg:px-16 xl:px-24">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl text-black leading-tight font-medium text-center">
                         {t("certificationKnowledge.why.title")}
                     </h2>
-                    <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 mt-10">
-                        <div className="flex-1 flex flex-col gap-8 order-2 lg:order-1">
+                    <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-10">
+                        <div className="flex-1 flex flex-col gap-6 sm:gap-8 order-2 lg:order-1">
                             
-                            <div className="flex flex-col gap-6">
-                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-6 text-black">
-                                    <p className="text-lg font-medium">
+                            <div className="flex flex-col gap-4 sm:gap-6">
+                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-4 sm:p-6 text-black">
+                                    <p className="text-base sm:text-lg font-medium">
                                         {t("certificationKnowledge.why.benefit1")}
                                     </p>
                                 </div>
                                 
-                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-6 text-black">
-                                    <p className="text-lg font-medium">
+                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-4 sm:p-6 text-black">
+                                    <p className="text-base sm:text-lg font-medium">
                                         {t("certificationKnowledge.why.benefit2")}
                                     </p>
                                 </div>
                                 
-                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-6 text-black">
-                                    <p className="text-lg font-medium">
+                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-4 sm:p-6 text-black">
+                                    <p className="text-base sm:text-lg font-medium">
                                         {t("certificationKnowledge.why.benefit3")}
                                     </p>
                                 </div>
                                 
-                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-6 text-black">
-                                    <p className="text-lg font-medium">
+                                <div className="bg-gradient-to-r from-[#ea84ff] via-[#efcbf7] to-gray-50 rounded-md p-4 sm:p-6 text-black">
+                                    <p className="text-base sm:text-lg font-medium">
                                         {t("certificationKnowledge.why.benefit4")}
                                     </p>
                                 </div>
@@ -92,13 +92,13 @@ export default function CertificationKnowledge() {
                         </div>
                         
                         <div className="flex-1 flex justify-center items-center order-1 lg:order-2">
-                            <div className="relative w-full max-w-lg lg:max-w-2xl">
+                            <div className="relative w-full max-w-sm sm:max-w-lg lg:max-w-2xl">
                                 <Image 
                                     src="/knowledge_03.png" 
                                     alt="Ilustração de certificação GCFC com personagens interagindo com certificado" 
                                     width={600} 
                                     height={500} 
-                                    className="w-[420px] h-auto object-contain" 
+                                    className="w-full h-auto object-contain" 
                                 />
                             </div>
                         </div>
@@ -106,62 +106,62 @@ export default function CertificationKnowledge() {
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
-                <div className="max-w-[1580px] mx-auto w-full px-8 sm:px-16 lg:px-24">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl text-black leading-tight font-medium mb-16 text-center">
+            <section className="py-12 sm:py-16 lg:py-20 bg-white">
+                <div className="max-w-[1580px] mx-auto w-full px-4 sm:px-8 lg:px-16 xl:px-24">
+                    <div className="text-center mb-12 sm:mb-16">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl text-black leading-tight font-medium mb-12 sm:mb-16 text-center">
                             {t("certificationKnowledge.how.title")}
                         </h2>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                             <div className="bg-white border border-gray-200 rounded-xl p-4 py-5 shadow-sm">
-                                <h3 className="text-xl text-left font-bold text-black mb-4">{t("certificationKnowledge.how.step1.title")}</h3>
-                                <p className="text-sm text-left text-black leading-relaxed">
+                                <h3 className="text-lg sm:text-xl text-left font-bold text-black mb-3 sm:mb-4">{t("certificationKnowledge.how.step1.title")}</h3>
+                                <p className="text-xs sm:text-sm text-left text-black leading-relaxed">
                                     {t("certificationKnowledge.how.step1.description")}
                                 </p>
                             </div>
                             
                             <div className="bg-white border border-gray-200 rounded-xl p-4 py-5 shadow-sm">
-                                <h3 className="text-xl text-left font-bold text-black mb-4">{t("certificationKnowledge.how.step2.title")}</h3>
-                                <p className="text-sm text-left text-black leading-relaxed">
+                                <h3 className="text-lg sm:text-xl text-left font-bold text-black mb-3 sm:mb-4">{t("certificationKnowledge.how.step2.title")}</h3>
+                                <p className="text-xs sm:text-sm text-left text-black leading-relaxed">
                                     {t("certificationKnowledge.how.step2.description")}
                                 </p>
                             </div>
                             
                             <div className="bg-gradient-to-r from-[#6a0080] via-[#ca0ffd] to-[#6a0080] rounded-xl p-4 py-5 shadow-sm">
-                                <h3 className="text-xl text-left font-bold text-white mb-4">{t("certificationKnowledge.how.step3.title")}</h3>
-                                <p className="text-sm text-left text-white leading-relaxed">
+                                <h3 className="text-lg sm:text-xl text-left font-bold text-white mb-3 sm:mb-4">{t("certificationKnowledge.how.step3.title")}</h3>
+                                <p className="text-xs sm:text-sm text-left text-white leading-relaxed">
                                     {t("certificationKnowledge.how.step3.description")}
                                 </p>
                             </div>
                         </div>
                     </div>
                     
-                    <div className="max-w-[1580px] mx-auto relative flex items-center justify-center rounded-xl overflow-hidden">
-                        <div className="bg-gradient-to-r from-purple-300 to-purple-600 rounded-l-xl p-8 lg:p-16 h-40"></div>
+                    <div className="max-w-[1580px] mx-auto relative flex flex-col lg:flex-row items-center justify-center rounded-xl overflow-hidden">
+                        <div className="bg-gradient-to-r from-purple-300 to-purple-600 rounded-t-xl lg:rounded-l-xl lg:rounded-t-none p-6 sm:p-8 lg:p-16 h-32 sm:h-36 lg:h-40 w-full lg:w-auto"></div>
                         
-                        <div className="absolute left-18 top-1/2 transform -translate-y-1/2 z-10 ">
+                        <div className="absolute left-4 sm:left-8 lg:left-18 top-1/2 transform -translate-y-1/2 z-10">
                             <Image 
                                 src="/knowledge_04.png" 
                                 alt="Badge de certificação GCFC" 
                                 width={80} 
                                 height={80} 
-                                className="w-16 h-16 lg:w-28 lg:h-28 object-contain" 
+                                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-28 lg:h-28 object-contain" 
                             />
                         </div>
                         
-                        <div className="relative  flex flex-col justify-center items-center flex-1 bg-blue-100 h-40 p-5 px-40">
-                            <p className="text-xl lg:text-4xl text-black font-medium leading-tight">
+                        <div className="relative flex flex-col justify-center items-center flex-1 bg-blue-100 h-32 sm:h-36 lg:h-40 p-4 sm:p-5 px-8 sm:px-16 lg:px-40">
+                            <p className="text-base sm:text-lg lg:text-2xl xl:text-4xl text-black font-medium leading-tight text-center">
                                 {t("certificationKnowledge.price.message")}
                             </p>
                         </div>
                         
-                        <div className="relative z-20 text-center lg:text-right mt-6 lg:mt-0 p-4 bg-[#6a0080] h-40 w-80">
-                            <p className="text-white text-lg mb-2 text-center">{t("certificationKnowledge.price.from")}</p>
+                        <div className="relative z-20 text-center lg:text-right mt-0 lg:mt-0 p-4 bg-[#6a0080] h-32 sm:h-36 lg:h-40 w-full lg:w-80">
+                            <p className="text-white text-sm sm:text-lg mb-2 text-center">{t("certificationKnowledge.price.from")}</p>
                             <div className="flex items-baseline justify-center w-full">
-                                <span className="text-white text-2xl lg:text-4xl font-bold">{t("certificationKnowledge.price.currency")}</span>
-                                <span className="text-white text-4xl lg:text-7xl font-bold ml-1">249</span>
-                                <span className="text-white text-xl ml-1">{t("certificationKnowledge.price.period")}</span>
+                                <span className="text-white text-lg sm:text-2xl lg:text-4xl font-bold">{t("certificationKnowledge.price.currency")}</span>
+                                <span className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-7xl font-bold ml-1">249</span>
+                                <span className="text-white text-sm sm:text-lg lg:text-xl ml-1">{t("certificationKnowledge.price.period")}</span>
                             </div>
                         </div>
                     </div>
@@ -170,25 +170,25 @@ export default function CertificationKnowledge() {
 
             <FormGlobal title={t("certificationKnowledge.form.title")}/>
 
-            <section className="py-20 bg-white">
+            <section className="py-12 sm:py-16 lg:py-20 bg-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-black text-center mb-16">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black text-center mb-12 sm:mb-16">
                         {t("certificationKnowledge.faq.title")}
                     </h2>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                         <details className="border border-gray-300 rounded-lg bg-white group">
-                            <summary className="px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
-                                <span className="text-base font-medium text-black">
+                            <summary className="px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                                <span className="text-sm sm:text-base font-medium text-black">
                                     {t("certificationKnowledge.faq.question1")}
                                 </span>
-                                <span className="text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
+                                <span className="text-xl sm:text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
                             </summary>
-                            <div className="px-6 pb-4 border-t border-gray-100">
-                                <p className="text-gray-700 leading-relaxed pt-4">
+                            <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                                <p className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4">
                                     {t("certificationKnowledge.faq.answer1.p1")}
                                 </p>
-                                <ul className="text-gray-700 leading-relaxed pt-4 space-y-2">
+                                <ul className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4 space-y-2">
                                     <li>{t("certificationKnowledge.faq.answer1.li1")}</li>
                                     <li>{t("certificationKnowledge.faq.answer1.li2")}</li>
                                     <li>{t("certificationKnowledge.faq.answer1.li3")}</li>
@@ -198,28 +198,28 @@ export default function CertificationKnowledge() {
                         </details>
 
                         <details className="border border-gray-300 rounded-lg bg-white group">
-                            <summary className="px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
-                                <span className="text-base font-medium text-black">
+                            <summary className="px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                                <span className="text-sm sm:text-base font-medium text-black">
                                     {t("certificationKnowledge.faq.question2")}
                                 </span>
-                                <span className="text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
+                                <span className="text-xl sm:text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
                             </summary>
-                            <div className="px-6 pb-4 border-t border-gray-100">
-                                <p className="text-gray-700 leading-relaxed pt-4">
+                            <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                                <p className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4">
                                     {t("certificationKnowledge.faq.answer2")}
                                 </p>
                             </div>
                         </details>
 
                         <details className="border border-gray-300 rounded-lg bg-white group">
-                            <summary className="px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
-                                <span className="text-base font-medium text-black">
+                            <summary className="px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                                <span className="text-sm sm:text-base font-medium text-black">
                                     {t("certificationKnowledge.faq.question3")}
                                 </span>
-                                <span className="text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
+                                <span className="text-xl sm:text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
                             </summary>
-                            <div className="px-6 pb-4 border-t border-gray-100">
-                                <div className="text-gray-700 leading-relaxed pt-4 space-y-3">
+                            <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                                <div className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4 space-y-2 sm:space-y-3">
                                     <p>{t("certificationKnowledge.faq.answer3.p1")}</p>
                                     <p>{t("certificationKnowledge.faq.answer3.p2")}</p>
                                     <p>{t("certificationKnowledge.faq.answer3.p3")}</p>
@@ -231,28 +231,28 @@ export default function CertificationKnowledge() {
                         </details>
 
                         <details className="border border-gray-300 rounded-lg bg-white group">
-                            <summary className="px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
-                                <span className="text-base font-medium text-black">
+                            <summary className="px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                                <span className="text-sm sm:text-base font-medium text-black">
                                     {t("certificationKnowledge.faq.question4")}
                                 </span>
-                                <span className="text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
+                                <span className="text-xl sm:text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
                             </summary>
-                            <div className="px-6 pb-4 border-t border-gray-100">
-                                <div className="text-gray-700 leading-relaxed pt-4 space-y-3">
+                            <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                                <div className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4 space-y-2 sm:space-y-3">
                                     <p>{t("certificationKnowledge.faq.answer4")}</p>
                                 </div>
                             </div>
                         </details>
 
                         <details className="border border-gray-300 rounded-lg bg-white group">
-                            <summary className="px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
-                                <span className="text-base font-medium text-black">
+                            <summary className="px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                                <span className="text-sm sm:text-base font-medium text-black">
                                     {t("certificationKnowledge.faq.question5")}
                                 </span>
-                                <span className="text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
+                                <span className="text-xl sm:text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
                             </summary>
-                            <div className="px-6 pb-4 border-t border-gray-100">
-                                <div className="text-gray-700 leading-relaxed pt-4 space-y-4">
+                            <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                                <div className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4 space-y-3 sm:space-y-4">
                                     <div>
                                         <p className="font-semibold text-black">{t("certificationKnowledge.faq.answer5.certification.title")}</p>
                                         <p>{t("certificationKnowledge.faq.answer5.certification.description")}</p>
@@ -270,14 +270,14 @@ export default function CertificationKnowledge() {
                         </details>
 
                         <details className="border border-gray-300 rounded-lg bg-white group">
-                            <summary className="px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
-                                <span className="text-base font-medium text-black">
+                            <summary className="px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                                <span className="text-sm sm:text-base font-medium text-black">
                                     {t("certificationKnowledge.faq.question6")}
                                 </span>
-                                <span className="text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
+                                <span className="text-xl sm:text-2xl font-bold text-gray-600 group-open:rotate-45 transition-transform">+</span>
                             </summary>
-                            <div className="px-6 pb-4 border-t border-gray-100">
-                                <div className="text-gray-700 leading-relaxed pt-4 space-y-3">
+                            <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                                <div className="text-sm sm:text-base text-gray-700 leading-relaxed pt-3 sm:pt-4 space-y-2 sm:space-y-3">
                                     <p>{t("certificationKnowledge.faq.answer6")}</p>
                                 </div>
                             </div>

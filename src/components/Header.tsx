@@ -29,10 +29,10 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
   return (
     <header className={`w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'fixed top-0 left-0 bg-white pt-4 shadow-lg border-b border-gray-200/50 sm:px-8' 
-        : `${backgroundColor} mt-6 mx-auto sm:px-8`
+        ? 'fixed top-0 left-0 bg-white pt-4 shadow-lg border-b border-gray-200/50 px-4 sm:px-8' 
+        : `${backgroundColor} mt-6 mx-auto px-4 sm:px-8`
     }`}>
-      <div className="px-12 2xl:px-6 max-w-[1570px] mx-auto w-full">
+      <div className="max-w-[1570px] mx-auto w-full">
         {!isScrolled && (
           <div className="flex items-center justify-end">
             <div className={`hidden lg:flex gap-6 items-center text-sm font-open-sans ${
@@ -44,10 +44,10 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
         )}
         <nav
           className={`flex items-center justify-between ${
-            isScrolled ? 'py-2' : 'py-5'
+            isScrolled ? 'py-2' : 'py-4 sm:py-5'
           }`}
         >
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3">
             <Image 
               src={isScrolled ? "/logo.png" : (logoWhite ? "/logo_branco.png" : "/logo.png")} 
               alt="GCFC Logo" 
@@ -58,50 +58,50 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
                 width: 'auto',
                 transition: 'all 0.3s ease'
               }}
-              className="transition-all duration-300 h-10 sm:h-12 md:h-14 lg:h-14 w-auto"
+              className="transition-all duration-300 h-8 sm:h-10 md:h-12 lg:h-14 w-auto"
             />
           </Link>
           
           {/* Desktop Navigation */}
-          <ul className={`hidden lg:flex gap-8 lg:gap-12 items-center text-base font-open-sans ${
+          <ul className={`hidden lg:flex gap-6 sm:gap-8 lg:gap-12 items-center text-sm sm:text-base font-open-sans ${
             isScrolled ? 'text-zinc-900' : (logoWhite ? 'text-white' : 'text-zinc-900')
           }`}>
             <li><button onClick={() => navigateTo('/')} className={`hover:text-[#a000d6] transition-colors ${
-              isScrolled ? 'text-base' : 'text-xl lg:text-lg'
+              isScrolled ? 'text-sm sm:text-base' : 'text-lg lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
             }`}>{t("header.nav.home")}</button></li>
             <li><button onClick={() => navigateTo('/about-us')} className={`hover:text-[#a000d6] transition-colors ${
-              isScrolled ? 'text-base' : 'text-xl lg:text-lg'
+              isScrolled ? 'text-sm sm:text-base' : 'text-lg lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
             }`}>{t("header.nav.about")}</button></li>
             <li><button onClick={() => navigateTo('/certification')} className={`hover:text-[#a000d6] transition-colors ${
-              isScrolled ? 'text-base' : 'text-xl lg:text-lg'
+              isScrolled ? 'text-sm sm:text-base' : 'text-lg lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
             }`}>{t("header.nav.certification")}</button></li>
             <li><button onClick={() => navigateTo('/award')} className={`hover:text-[#a000d6] transition-colors ${
-              isScrolled ? 'text-base' : 'text-xl lg:text-lg'
+              isScrolled ? 'text-sm sm:text-base' : 'text-lg lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
             }`}>{t("header.nav.award")}</button></li>
           </ul>
 
-          <div className="flex gap-4">
+          <div className="flex gap-2 sm:gap-4">
             <ButtonNotified
               text={t("header.button.notified")}
               href="/notification"
-              padding='px-4 py-2'
+              padding='px-3 sm:px-4 py-2'
               borderRadius="rounded-full"
-              className="hidden lg:block text-zinc-900 shadow-lg"
+              className="hidden lg:block text-zinc-900 shadow-lg text-sm sm:text-base"
             />
             <Button
               text={t("header.button.certification")}
               href="/certification"
-              padding='px-4 py-2'
+              padding='px-3 sm:px-4 py-2'
               borderRadius="rounded-full"
-              className="hidden lg:block text-white text-base font-bold shadow-lg"
+              className="hidden lg:block text-white text-sm sm:text-base font-bold shadow-lg"
             />
           </div>
 
@@ -114,7 +114,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
             aria-label="Toggle mobile menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -136,35 +136,35 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
             className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-xl transform transition-transform duration-300 ease-in-out"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-8">
+            <div className="p-4 sm:p-6">
+              <div className="flex justify-between items-center mb-6 sm:mb-8">
                 <Image 
                   src="/logo.png" 
                   alt="GCFC Logo" 
                   width={180} 
                   height={50} 
-                  className="h-10 w-auto" 
+                  className="h-8 sm:h-10 w-auto" 
                 />
                 <button
                   onClick={closeMobileMenu}
                   className="p-2 text-zinc-600 hover:text-zinc-900"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
               {/* Mobile Navigation Links */}
-              <nav className="mb-8">
-                <ul className="space-y-4">
+              <nav className="mb-6 sm:mb-8">
+                <ul className="space-y-3 sm:space-y-4">
                   <li>
                     <button 
                       onClick={() => {
                         navigateTo('/');
                         closeMobileMenu();
                       }}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
+                      className="block text-sm sm:text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.nav.home")}
                     </button>
@@ -175,7 +175,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
                         navigateTo('/about-us');
                         closeMobileMenu();
                       }}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
+                      className="block text-sm sm:text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.mobile.about")}
                     </button>
@@ -186,7 +186,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
                         navigateTo('/certification');
                         closeMobileMenu();
                       }}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
+                      className="block text-sm sm:text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.mobile.certification")}
                     </button>
@@ -197,7 +197,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
                         navigateTo('/award');
                         closeMobileMenu();
                       }}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
+                      className="block text-sm sm:text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.nav.award")}
                     </button>
@@ -206,26 +206,28 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
               </nav>
 
               {/* Mobile Language Selector */}
-              <div className="mb-8">
+              <div className="mb-6 sm:mb-8">
                 <h3 className="text-xs font-medium text-zinc-500 mb-3 font-open-sans">{t("header.mobile.language.title")}</h3>
                 <LanguageSelector />
               </div>
 
-              {/* Mobile CTA Button */}
+              {/* Mobile CTA Buttons */}
+              <div className="space-y-3">
                 <ButtonNotified
                   text={t("header.button.notified")}
                   href="/notification"
                   padding='px-4 py-2'
                   borderRadius="rounded-full"
-                  className="hidden lg:block text-zinc-900 shadow-lg"
+                  className="w-full text-zinc-900 shadow-lg text-sm sm:text-base"
                 />
                 <Button
                   text={t("header.button.certification")}
                   href="/certification"
                   padding='px-4 py-2'
                   borderRadius="rounded-full"
-                  className="hidden lg:block text-white text-base font-bold shadow-lg"
+                  className="w-full text-white text-sm sm:text-base font-bold shadow-lg"
                 />
+              </div>
             </div>
           </div>
         </div>
