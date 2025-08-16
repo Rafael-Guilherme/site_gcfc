@@ -2,15 +2,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useI18n, languages } from "./I18nProvider";
+import { useLocale } from "@/hooks/useLocale";
 import Button from './Button';
 import ButtonNotified from "./ButtonNotified";
+import { LanguageSelector } from './LanguageSelector';
 
 function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroundColor?: string, logoWhite?: boolean }) {
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useI18n();
+  const { t, navigateTo } = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,67 +22,8 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      setIsLanguageOpen(false);
-    }
-  }, [isMobileMenuOpen]);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isLanguageOpen) {
-        const target = event.target as Element;
-        if (!target.closest('.language-dropdown')) {
-          setIsLanguageOpen(false);
-        }
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isLanguageOpen]);
-
-  useEffect(() => {
-    if (isLanguageOpen) {
-      document.body.classList.add('dropdown-open');
-    } else {
-      document.body.classList.remove('dropdown-open');
-    }
-
-    return () => {
-      document.body.classList.remove('dropdown-open');
-    };
-  }, [isLanguageOpen]);
-
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
-  };
-
-  const handleLanguageToggle = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsLanguageOpen(!isLanguageOpen);
-  };
-
-  const handleLanguageSelect = (lang: typeof languages[0]) => {
-    setLanguage(lang);
-    setIsLanguageOpen(false);
-  };
-
-  const handleDropdownScroll = (e: React.WheelEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const target = e.currentTarget as HTMLElement;
-    const scrollTop = target.scrollTop;
-    const scrollHeight = target.scrollHeight;
-    const clientHeight = target.clientHeight;
-    const deltaY = e.deltaY;
-    
-    if ((deltaY > 0 && scrollTop < scrollHeight - clientHeight) || 
-        (deltaY < 0 && scrollTop > 0)) {
-      target.scrollTop += deltaY;
-    }
   };
 
   return (
@@ -97,49 +38,7 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
             <div className={`hidden lg:flex gap-6 items-center text-sm font-open-sans ${
               logoWhite ? 'text-white' : 'text-zinc-700'
             }`}>      
-              <div className="relative language-dropdown">
-                <button
-                  onClick={handleLanguageToggle}
-                  className={`flex items-center gap-2 hover:text-[#a000d6] transition-colors ${
-                    logoWhite ? 'text-white' : 'text-zinc-700'
-                  }`}
-                  aria-expanded={isLanguageOpen}
-                  aria-haspopup="true"
-                >
-                  <span className={`fi fi-${language.flag}`} />
-                  <span className="hidden sm:inline">{language.label}</span>
-                  <svg
-                    className={`w-4 h-4 transition-transform ${isLanguageOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isLanguageOpen && (
-                  <div 
-                    className="absolute right-0 mt-2 w-64 max-h-[300px] overflow-y-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
-                    onWheel={handleDropdownScroll}
-                  >
-                    <div className="py-1" role="menu" aria-orientation="vertical">
-                      {languages.map((lang) => (
-                        <button
-                          key={lang.flag}
-                          onClick={() => handleLanguageSelect(lang)}
-                          className={`flex items-center gap-2 w-full px-4 py-2 text-xs text-left hover:bg-gray-100 font-open-sans ${
-                            language.code === lang.code ? 'text-[#a000d6]' : 'text-zinc-700'
-                          }`}
-                          role="menuitem"
-                        >
-                          <span className={`fi fi-${lang.flag}`} />
-                          {lang.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+              <LanguageSelector />
             </div>
           </div>
         )}
@@ -167,26 +66,26 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
           <ul className={`hidden lg:flex gap-8 lg:gap-12 items-center text-base font-open-sans ${
             isScrolled ? 'text-zinc-900' : (logoWhite ? 'text-white' : 'text-zinc-900')
           }`}>
-            <li><Link href="/" className={`hover:text-[#a000d6] transition-colors ${
+            <li><button onClick={() => navigateTo('/')} className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>{t("header.nav.home")}</Link></li>
-            <li><Link href="about-us" className={`hover:text-[#a000d6] transition-colors ${
+            }`}>{t("header.nav.home")}</button></li>
+            <li><button onClick={() => navigateTo('/about-us')} className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>{t("header.nav.about")}</Link></li>
-            <li><Link href="/certification" className={`hover:text-[#a000d6] transition-colors ${
+            }`}>{t("header.nav.about")}</button></li>
+            <li><button onClick={() => navigateTo('/certification')} className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>{t("header.nav.certification")}</Link></li>
-            <li><Link href="award" className={`hover:text-[#a000d6] transition-colors ${
+            }`}>{t("header.nav.certification")}</button></li>
+            <li><button onClick={() => navigateTo('/award')} className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>{t("header.nav.award")}</Link></li>
+            }`}>{t("header.nav.award")}</button></li>
           </ul>
 
           <div className="flex gap-4">
@@ -260,69 +159,56 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
               <nav className="mb-8">
                 <ul className="space-y-4">
                   <li>
-                    <Link 
-                      href="/" 
-                      onClick={closeMobileMenu}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
+                    <button 
+                      onClick={() => {
+                        navigateTo('/');
+                        closeMobileMenu();
+                      }}
+                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.nav.home")}
-                    </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link 
-                      href="about-us" 
-                      onClick={closeMobileMenu}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
+                    <button 
+                      onClick={() => {
+                        navigateTo('/about-us');
+                        closeMobileMenu();
+                      }}
+                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.mobile.about")}
-                    </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link 
-                      href="/certification" 
-                      onClick={closeMobileMenu}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
+                    <button 
+                      onClick={() => {
+                        navigateTo('/certification');
+                        closeMobileMenu();
+                      }}
+                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.mobile.certification")}
-                    </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link 
-                      href="/award" 
-                      onClick={closeMobileMenu}
-                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
+                    <button 
+                      onClick={() => {
+                        navigateTo('/award');
+                        closeMobileMenu();
+                      }}
+                      className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans text-left w-full"
                     >
                       {t("header.nav.award")}
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </nav>
 
               {/* Mobile Language Selector */}
-              <div className="mb-8 language-dropdown">
+              <div className="mb-8">
                 <h3 className="text-xs font-medium text-zinc-500 mb-3 font-open-sans">{t("header.mobile.language.title")}</h3>
-                <div 
-                  className="space-y-2 max-h-[200px] overflow-y-auto"
-                  onWheel={handleDropdownScroll}
-                >
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setLanguage(lang);
-                        closeMobileMenu();
-                      }}
-                      className={`flex items-center gap-3 w-full p-3 rounded-lg text-left transition-colors font-open-sans ${
-                        language.code === lang.code 
-                          ? 'bg-[#a000d6] text-white' 
-                          : 'text-zinc-700 hover:bg-gray-100'
-                      }`}
-                    >
-                      <span className={`fi fi-${lang.flag}`} />
-                      {lang.label}
-                    </button>
-                  ))}
-                </div>
+                <LanguageSelector />
               </div>
 
               {/* Mobile CTA Button */}
@@ -348,4 +234,4 @@ function Header({ backgroundColor = "bg-white", logoWhite = false }: { backgroun
   );
 }
 
-export default Header; 
+export default Header;

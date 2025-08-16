@@ -16,9 +16,9 @@ function Footer() {
           <div className="flex flex-1 flex-col sm:flex-row justify-between gap-6 sm:gap-8 text-center md:text-left">
             <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[150px]">
               <span className="font-bold text-sm sm:text-base mb-1 font-heading">{t("footer.section.institutional")}</span>
-              <a href="/about-us" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.about")}</a>
-              <a href="/certification-knowledge" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.certification.knowledge")}</a>
-              <a href="/notification" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.notification")}</a>
+              <Link href="/about-us" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.about")}</Link>
+              <Link href="/certification-knowledge" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.certification.knowledge")}</Link>
+              <Link href="/notification" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.notification")}</Link>
             </div>
             <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[150px]">
               <span className="font-bold text-sm sm:text-base mb-1 font-heading">{t("footer.section.services")}</span>
@@ -28,8 +28,8 @@ function Footer() {
             </div>
             <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[150px]">
               <span className="font-bold text-sm sm:text-base mb-1 font-heading">{t("footer.section.legal")}</span>
-              <a href="/terms-of-use" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.terms")}</a>
-              <a href="/privacy-policy" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.privacy")}</a>
+              <Link href="/terms-of-use" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.terms")}</Link>
+              <Link href="/privacy-policy" className="hover:underline text-xs sm:text-sm font-open-sans">{t("footer.link.privacy")}</Link>
             </div>
             <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[150px]">
               <span className="font-bold text-sm sm:text-base mb-1 font-heading">{t("footer.section.support")}</span>

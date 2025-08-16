@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Ubuntu, Open_Sans } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import { I18nProvider } from "@/components/I18nProvider";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -46,14 +44,7 @@ export default function RootLayout({
       <body
         className={`${ubuntu.variable} ${openSans.variable} antialiased min-h-screen`}
       >
-        <I18nProvider>
-          <div className="flex flex-col min-h-screen">
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </I18nProvider>
+        {children}
       </body>
     </html>
   );

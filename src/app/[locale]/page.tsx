@@ -2,13 +2,12 @@
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Button from '@/components/Button';
-import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import Connect from '@/components/Connect';
-import { useI18n } from '@/components/I18nProvider';
+import { useLocale } from '@/hooks/useLocale';
 
 export default function Home() {
-  const { t } = useI18n();
+  const { t, navigateTo, language } = useLocale();
 
   return (
     <>
@@ -29,19 +28,21 @@ export default function Home() {
                 
                 <div className="flex justify-center items-center lg:hidden">
                   <Image 
-                    src={`/imagem_01.png`}
+                    src={`/Site 1 - imagem 1 - ${language.flag}.png`}
                     alt="Hero GCFC" 
                     width={840} 
                     height={840} 
                     className="w-full max-w-sm sm:max-w-lg h-auto object-cover" 
                     priority 
-                    //key={`hero-mobile-${language.flag}`}
                   />
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 max-w-xl">
-                  <button className="text-black py-3 px-5 rounded-3xl border-2 border-black">
-                    <Link href="/saiba-mais">{t("home.hero.button1")}</Link>
+                  <button 
+                    onClick={() => navigateTo('/saiba-mais')}
+                    className="text-black py-3 px-5 rounded-3xl border-2 border-black hover:bg-gray-100 transition-colors"
+                  >
+                    {t("home.hero.button1")}
                   </button>
                   <Button text={t("home.hero.button2")} href="/certification" padding='py-3 px-5' borderRadius="rounded-2xl" className="hidden lg:block text-white text-base font-bold shadow-lg" />
                 </div>
@@ -49,13 +50,12 @@ export default function Home() {
               
               <div className="hidden lg:flex flex-1 justify-center items-center lg:pr-8">
                 <Image 
-                  src={`/imagem_01.png`}
+                  src={`/Site 1 - imagem 1 - ${language.flag}.png`}
                   alt="Hero GCFC" 
                   width={840} 
                   height={840} 
                   className="w-full max-w-xl h-auto object-cover rounded-br-[120px] rounded-tl-[120px]" 
                   priority 
-                  //key={`hero-desktop-${language.flag}`}
                 />
               </div>
           </section>
@@ -114,7 +114,7 @@ export default function Home() {
                 <Image src="/imagem_07.png" alt="Diagnóstico" width={400} height={600} className="h-48 sm:h-56 md:h-48 lg:h-64 w-40 sm:w-48 md:w-40 lg:w-56" />
                 <p className="text-black text-sm sm:text-2xl font-open-sans text-center uppercase font-semibold">{t("home.certification.step1.title")}</p>
                 <span className="text-black text-center text-xs sm:text-sm lg:text-base leading-tight break-words whitespace-pre-line max-w-[20rem] font-heading">
-                  {t("home.certification.step1.description")}
+                  {t("home.award.step1.description")}
                 </span>
               </div>
               <ArrowRightIcon className="w-12 h-10 text-black" />
