@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image';
 import Header from '@/components/Header';
-
+import Connect from '@/components/Connect';
+import { useI18n } from '@/components/I18nProvider';
 
 export default function Notification() {
+  const { t } = useI18n();
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-5 bg-[#6a0080]" />
@@ -14,16 +18,16 @@ export default function Notification() {
           <div className='bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 py-20 flex items-center justify-center'>
             <div className='flex items-center justify-start max-w-[1500px] w-full'>
                 <div className='flex items-center justify-between w-full max-w-[836px]'>
-                    <p className='text-black text-sm text-left font-open-sans'>Home { '>' } Fui Notificado</p>
-                    <h1 className='text-4xl font-medium text-center text-black uppercase'>Fui notificado</h1>
+                    <p className='text-black text-sm text-left font-open-sans'>{t("notification.breadcrumb.home")} { '>' } {t("notification.breadcrumb.notified")}</p>
+                    <h1 className='text-4xl font-medium text-center text-black uppercase'>{t("notification.title")}</h1>
                 </div>
             </div>
           </div>
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto w-full">    
-                <p className='text-black text-sm text-center font-open-sans'>Etapa 1/4</p>
+                <p className='text-black text-sm text-center font-open-sans'>{t("notification.step1.number")}</p>
                 <h2 className="text-4xl font-medium text-[#6a0080] leading-tight text-center mb-20">
-                    Notificação
+                    {t("notification.step1.title")}
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
                 <div className="relative">
@@ -40,27 +44,27 @@ export default function Notification() {
                 <div className="space-y-6">
                     <div className="space-y-4">
                         <h3 className="text-lg font-medium text-black mb-8">
-                            Quem são notificados
+                            {t("notification.step1.subtitle1")}
                         </h3>
                         
                         <p className="text-base text-gray-800">
-                            Empresas com potencial de destaque em seu segmento são notificadas pela GCFC sobre sua inclusão em uma avaliação gratuita e imparcial.
+                            {t("notification.step1.p1")}
                         </p>
                         
                         <h3 className="text-lg font-medium text-black mb-8">
-                            Como são notificados
+                            {t("notification.step1.subtitle2")}
                         </h3>
                         
                         <p className="text-base text-gray-800">
-                            Essa comunicação inicial é feita por e-mail ou telefone com ou sem solicitação prévia por parte da empresa notificada e sem quaisquer custos.
+                            {t("notification.step1.p2")}
                         </p>
                         
                         <h3 className="text-lg font-medium text-black mb-8">
-                            Por que fui notificado
+                            {t("notification.step1.subtitle3")}
                         </h3>
                         
                         <p className="text-base text-gray-800">
-                            Ao receber o aviso, a empresa compreende que está sendo considerada para uma premiação de relevância nacional.
+                            {t("notification.step1.p3")}
                         </p>
                     </div>
                 </div>
@@ -71,36 +75,36 @@ export default function Notification() {
           <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <p className='text-black text-sm text-center font-open-sans'>Etapa 2/4</p>
+                <p className='text-black text-sm text-center font-open-sans'>{t("notification.step2.number")}</p>
                 <h2 className="text-4xl font-medium text-[#6a0080]">
-                  Avaliação
+                  {t("notification.step2.title")}
                 </h2>
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Como Avaliamos
+                    {t("notification.step2.subtitle1")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    A GCFC simula ser um cliente para avaliar, de forma sigilosa e imparcial, a jornada real do consumidor na sua empresa, sem qualquer custo.
+                    {t("notification.step2.p1")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    O que Avaliamos
+                    {t("notification.step2.subtitle2")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Durante a avaliação, analisamos agilidade, clareza, cordialidade, resolução de problemas e conformidade com as leis consumeristas.
+                    {t("notification.step2.p2")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Integridade
+                    {t("notification.step2.subtitle3")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Essa etapa ocorre sem qualquer interferência da empresa avaliada, o que reforça a integridade e imparcialidade do processo.
+                    {t("notification.step2.p3")}
                   </p>
                 </div>
                 
@@ -120,9 +124,9 @@ export default function Notification() {
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto w-full">
               <div className="text-center mb-20">
-                <p className='text-black text-sm text-center font-open-sans'>Etapa 3/4</p>
+                <p className='text-black text-sm text-center font-open-sans'>{t("notification.step3.number")}</p>
                 <h2 className="text-4xl font-medium text-[#6a0080] leading-tight">
-                  Resultado
+                  {t("notification.step3.title")}
                 </h2>
               </div>
               
@@ -139,27 +143,27 @@ export default function Notification() {
                 
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Diagnóstico
+                    {t("notification.step3.subtitle1")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Após a avaliação, às empresas recebem um relatório detalhado de seu atendimento, com dados, pontos fortes, oportunidades de melhoria e recomendações práticas — sem custos.
+                    {t("notification.step3.p1")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Confidencialidade
+                    {t("notification.step3.subtitle2")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Apenas as empresas avaliadas recebem esse material sobre seu próprio negócio — essas informações não são divulgadas publicamente.
+                    {t("notification.step3.p2")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Objetivo
+                    {t("notification.step3.subtitle3")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    O objetivo é contribuir para a evolução contínua das organizações, mesmo daquelas que não forem premiadas, reforçando nosso compromisso com a valorização do consumidor.
+                    {t("notification.step3.p3")}
                   </p>
                 </div>
               </div>
@@ -169,36 +173,36 @@ export default function Notification() {
           <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <p className='text-black text-sm text-center font-open-sans'>Etapa 4/4</p>
+                <p className='text-black text-sm text-center font-open-sans'>{t("notification.step4.number")}</p>
                 <h2 className="text-4xl font-medium text-[#6a0080]">
-                  Premiação
+                  {t("notification.step4.title")}
                 </h2>
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Quem serão Convidados
+                    {t("notification.step4.subtitle1")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    As 3 empresas com melhor desempenho em cada segmento são convidadas para uma cerimônia exclusiva, onde será revelada a Melhor Empresa para o Consumidor da categoria.
+                    {t("notification.step4.p1")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    O que Ganharão
+                    {t("notification.step4.subtitle2")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    As convidadas participarão de um coquetel e jantar de gala, com fotógrafos e filmmakers produzindo conteúdo para sua empresa. As vencedoras receberão um troféu e o selo de Certificação GCFC.
+                    {t("notification.step4.p2")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Objetivo
+                    {t("notification.step4.subtitle3")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    A premiação valoriza publicamente o compromisso da empresa com o cliente, fortalecendo sua reputação, ampliando sua autoridade de marca e destacando-a da concorrência.
+                    {t("notification.step4.p3")}
                   </p>
                 </div>
                 
@@ -219,7 +223,7 @@ export default function Notification() {
             <div className="max-w-7xl mx-auto w-full">
               <div className="text-center mb-20">
                 <h2 className="text-4xl font-medium text-[#6a0080] leading-tight">
-                  Não quero participar
+                  {t("notification.noParticipation.title")}
                 </h2>
               </div>
               
@@ -236,27 +240,27 @@ export default function Notification() {
                 
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Ser avaliado, não garante premiação
+                    {t("notification.noParticipation.subtitle1")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Apenas as três empresas mais bem pontuadas em cada segmento são convidadas para a cerimônia e certificadas. Caso sua empresa não esteja entre elas, não será premiada — o convite será direcionado aos concorrentes com melhor desempenho.
+                    {t("notification.noParticipation.p1")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Nenhum prejuízo à sua imagem
+                    {t("notification.noParticipation.subtitle2")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Mesmo que a pontuação da sua empresa seja baixa, as informações não serão divulgadas publicamente. Apenas a própria empresa terá acesso ao relatório. Isso permite aprimorar processos internos, sem exposição negativa.
+                    {t("notification.noParticipation.p2")}
                   </p>
                   
                   <h3 className="text-lg font-medium text-black mb-8">
-                    Deseja ser removido da lista?
+                    {t("notification.noParticipation.subtitle3")}
                   </h3>
                   
                   <p className="text-base text-gray-800">
-                    Se ainda assim preferir não participar, basta solicitar a remoção da sua empresa da lista de potenciais avaliadas enviando um e-mail para: info@gcfc.global
+                    {t("notification.noParticipation.p3")}
                   </p>
                 </div>
               </div>
@@ -268,46 +272,20 @@ export default function Notification() {
               <Image src="/imagem_20.png" alt="GCFC Building" width={500} height={300} className="rounded-lg object-contain" />
             </div>
             <div className="sm:ml-8 mt-4 sm:mt-8">
-              <h2 className="text-2xl font-bold mb-12">SOBRE A GCFC</h2>
+              <h2 className="text-2xl font-bold mb-12">{t("notification.about.title")}</h2>
               <p className="text-sm sm:text-lg mb-4">
-                A GCFC – Great Company for Consumers é uma organização global que identifica e reconhece empresas que se destacam na qualidade do atendimento.
+                {t("notification.about.p1")}
               </p>
               <p className="text-sm sm:text-lg mb-4">
-                Presente em todos os continentes do mundo, nosso trabalho é avaliar, de forma criteriosa e imparcial, o atendimento, a transparência e o compromisso das empresas com seus consumidores.
+                {t("notification.about.p2")}
               </p>
               <p className="text-sm sm:text-lg">
-                O reconhecimento é feito pela Certificação GCFC e/ou pelo Prêmio Melhores Empresas para o Consumidor.
+                {t("notification.about.p3")}
               </p>
             </div>
           </section>
 
-          <section className="my-20 max-w-[1480px] mx-auto">
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-8 font-heading uppercase">Conecte-se conosco</h2>
-            <p className="text-black text-sm sm:text-base font-open-sans text-center mb-16">Fale com nosso time através de nossos canais oficiais</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-8">
-              <div className="flex flex-row items-center">
-                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-semibold mb-2 w-32">TRABALHE NA GCFC</p>
-                  <p className="text-base text-left">Faça parte do nosso time: <strong>people@gcfc.global</strong></p>
-                </div>
-                <Image src="/imagem_21.png" alt="Trabalhe na GCFC" width={300} height={200} />
-              </div>
-              <div className="flex flex-row items-center">
-                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-semibold mb-2 w-32">IMPRENSA E MÍDIA</p>
-                  <p className="text-base text-left">Assessoria de imprensa: <strong>press@gcfc.global</strong></p>
-                </div>
-                <Image src="/imagem_22.png" alt="Imprensa e Mídia" width={300} height={200} />
-              </div>
-              <div className="flex flex-row items-center">
-                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-semibold mb-2 w-32">FALE COM A GENTE</p>
-                  <p className="text-base text-left">Central de Atendimento: <strong>info@gcfc.global</strong></p>
-                </div>
-                <Image src="/imagem_23.png" alt="Fale com a Gente" width={300} height={200} />
-              </div>
-            </div>
-          </section>
+          <Connect />
         </main>
       </div>
     </>

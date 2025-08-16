@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image';
 import Header from '@/components/Header';
-
+import Connect from '@/components/Connect';
+import { useI18n } from '@/components/I18nProvider';
 
 export default function AboutUs() {
+  const { t } = useI18n();
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-5 bg-[#6a0080]" />
@@ -14,15 +18,15 @@ export default function AboutUs() {
           <div className='bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 py-20 flex items-center justify-center'>
             <div className='flex items-center justify-start max-w-[1500px] w-full'>
                 <div className='flex items-center justify-between w-full max-w-[836px]'>
-                    <p className='text-black text-sm text-left font-open-sans'>Home { '>' } Sobre nós</p>
-                    <h1 className='text-4xl font-medium text-center text-black uppercase'>SOBRE NÓS</h1>
+                    <p className='text-black text-sm text-left font-open-sans'>{t("about.breadcrumb.home")} { '>' } {t("about.breadcrumb.about")}</p>
+                    <h1 className='text-4xl font-medium text-center text-black uppercase'>{t("about.title")}</h1>
                 </div>
             </div>
           </div>
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto w-full">    
                 <h2 className="text-4xl font-medium text-[#6a0080] leading-tight text-center mb-20">
-                    Sobre a GCFC
+                    {t("about.section1.title")}
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
                 <div className="relative">
@@ -39,22 +43,19 @@ export default function AboutUs() {
                 <div className="space-y-6">
                     <div className="space-y-4">
                     <h3 className="text-lg font-medium text-black mb-8">
-                        Quem somos
+                        {t("about.section1.subtitle")}
                     </h3>
                     
                     <p className="text-base text-gray-800">
-                        A GCFC - Great Company for Consumers é uma <b>organização global que identifica e reconhece empresas que se destacam</b> na experiência do cliente, 
-                        no cumprimento das leis consumeristas e nas boas práticas de mercado.
+                        {t("about.section1.p1")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                        Por meio de uma avaliação imparcial, que inclui critérios técnicos e avaliações por cliente oculto, a <b>GCFC identifica, certifica e 
-                        premia as empresas que realmente entregam valor, confiança e respeito ao consumidor.</b>
+                        {t("about.section1.p2")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                        Nosso objetivo é destacar empresas confiáveis e responsáveis, oferecendo a elas uma certificação que gera credibilidade e fortalece sua 
-                        imagem no mercado.
+                        {t("about.section1.p3")}
                     </p>
                     </div>
                 </div>
@@ -66,30 +67,27 @@ export default function AboutUs() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-medium text-[#6a0080]">
-                  Potente Gerador de Dados
+                  {t("about.section2.title")}
                 </h2>
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black">
-                    Referência em reputação e credibilidade
+                    {t("about.section2.subtitle")}
                   </h3>
                   
                   <div className="space-y-4">
                     <p className="text-base text-gray-800">
-                      Além de reconhecer empresas de excelência, a GCFC atua como um poderoso gerador de dados sobre a jornada do consumidor, 
-                      com <strong>informações valiosas e únicas da experiência de compra do consumidor</strong> em seu negócio.
+                      {t("about.section2.p1")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Cada avaliação realizada <strong>gera insights preciosos e exclusivos</strong> sobre comportamento de compra, pontos de 
-                      melhoria e boas práticas adotadas no mercado.
+                      {t("about.section2.p2")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Essas informações são compartilhadas com as empresas avaliadas por meio de relatórios personalizados, 
-                      <strong>contribuindo diretamente para a evolução de seus processos</strong> de atendimento, fidelização e experiência do cliente.
+                      {t("about.section2.p3")}
                     </p>
                   </div>
                 </div>
@@ -111,7 +109,7 @@ export default function AboutUs() {
             <div className="max-w-7xl mx-auto w-full">
               <div className="text-center mb-20">
                 <h2 className="text-4xl font-medium text-[#6a0080] leading-tight">
-                  Poderoso Gerador de Reputação
+                  {t("about.section3.title")}
                 </h2>
               </div>
               
@@ -128,32 +126,28 @@ export default function AboutUs() {
                 
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black">
-                    Criamos Reputação e Credibilidade
+                    {t("about.section3.subtitle")}
                   </h3>
                   
                   <div className="space-y-4">
                     <p className="text-base text-gray-800">
-                      A GCFC também é um <b>gerador de reputação e credibilidade</b> para as empresas que se destacam.
+                      {t("about.section3.p1")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Ao conquistar a certificação, a marca passa a ser reconhecida publicamente como comprometida 
-                      com <b>a excelência no atendimento, o respeito ao consumidor e a conformidade com as leis.</b>
+                      {t("about.section3.p2")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Esse reconhecimento gera confiança imediata no público, fortalece a imagem institucional e 
-                      diferencia a empresa no mercado.
+                      {t("about.section3.p3")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Mais do que um selo, a GCFC oferece um <b>atestado de qualidade validado por critérios técnicos e 
-                      experiência real de consumo.</b>
+                      {t("about.section3.p4")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      É uma ferramenta poderosa para atrair novos clientes, aumentar a fidelização e consolidar uma 
-                      reputação sólida e duradoura.
+                      {t("about.section3.p5")}
                     </p>
                   </div>
                 </div>
@@ -165,33 +159,31 @@ export default function AboutUs() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-medium text-[#6a0080]">
-                  Presença Global
+                  {t("about.section4.title")}
                 </h2>
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="space-y-6">
                   <h3 className="text-lg font-medium text-black">
-                    Presença em todos os continentes
+                    {t("about.section4.subtitle")}
                   </h3>
                   
                   <div className="space-y-4">
                     <p className="text-base text-gray-800">
-                      A GCFC - Great Company for Consumers é uma instituição certificadora que atua em <b>todos os continentes do mundo.</b>
+                      {t("about.section4.p1")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Nossa presença global nos permite <strong>comparar práticas de excelência entre diferentes culturas</strong>, i
-                      dentificar <strong>tendências globais de consumo</strong> e promover um alto padrão de qualidade em todos os lugares.
+                      {t("about.section4.p2")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Nossa metodologia se adapta às realidades locais, levando a certificação GCFC para empresas de diversos setores, 
-                      reforçando o<strong>compromisso com a transparência, o respeito e a experiência do cliente</strong>.
+                      {t("about.section4.p3")}
                     </p>
                     
                     <p className="text-base text-gray-800">
-                      Ser reconhecido pela GCFC significa ter uma marca alinhada com os melhores padrões de serviço e confiança em escala global.
+                      {t("about.section4.p4")}
                     </p>
                   </div>
                 </div>
@@ -209,33 +201,7 @@ export default function AboutUs() {
             </div>
           </section>
 
-          <section className="my-20 max-w-[1480px] mx-auto">
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-[#6a0080] mb-8 font-heading uppercase">Conecte-se conosco</h2>
-            <p className="text-black text-sm sm:text-base font-open-sans text-center mb-16">Fale com nosso time através de nossos canais oficiais</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-8">
-              <div className="flex flex-row items-center">
-                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-semibold mb-2 w-32">TRABALHE NA GCFC</p>
-                  <p className="text-base text-left">Faça parte do nosso time: <strong>people@gcfc.global</strong></p>
-                </div>
-                <Image src="/imagem_21.png" alt="Trabalhe na GCFC" width={300} height={200} />
-              </div>
-              <div className="flex flex-row items-center">
-                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-semibold mb-2 w-32">IMPRENSA E MÍDIA</p>
-                  <p className="text-base text-left">Assessoria de imprensa: <strong>press@gcfc.global</strong></p>
-                </div>
-                <Image src="/imagem_22.png" alt="Imprensa e Mídia" width={300} height={200} />
-              </div>
-              <div className="flex flex-row items-center">
-                <div className="-mr-16 h-full max-h-[250px] bg-gradient-to-bl from-gray-300 via-gray-100 to-gray-300 text-black flex flex-col justify-center items-start pl-2">
-                  <p className="text-2xl font-semibold mb-2 w-32">FALE COM A GENTE</p>
-                  <p className="text-base text-left">Central de Atendimento: <strong>info@gcfc.global</strong></p>
-                </div>
-                <Image src="/imagem_23.png" alt="Fale com a Gente" width={300} height={200} />
-              </div>
-            </div>
-          </section>
+          <Connect />
         </main>
       </div>
     </>

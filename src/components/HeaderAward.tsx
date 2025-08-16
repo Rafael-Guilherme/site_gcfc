@@ -9,7 +9,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, setLanguage } = useI18n();
+  const { language, setLanguage, t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -149,7 +149,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
         >
           <Link href="/" className="flex items-center gap-3">
             <Image 
-              src="/logo_award.png" 
+              src={isScrolled ? "/logo.png" : (logoWhite ? "/logo_award.png"  : "/logo.png")} 
               alt="GCFC Logo" 
               width={220} 
               height={72}
@@ -170,34 +170,34 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>INÍCIO</Link></li>
+            }`}>{t("header.nav.home")}</Link></li>
             <li><Link href="about-us" className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>QUEM SOMOS</Link></li>
+            }`}>{t("header.nav.about")}</Link></li>
             <li><Link href="/certification" className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>CERTICAÇÃO GCFC</Link></li>
+            }`}>{t("header.nav.certification")}</Link></li>
             <li><Link href="award" className={`hover:text-[#a000d6] transition-colors ${
               isScrolled ? 'text-base' : 'text-xl lg:text-lg'
             } ${
               isScrolled ? '' : (logoWhite ? 'text-white' : '')
-            }`}>PREMIAÇÃO</Link></li>
+            }`}>{t("header.nav.award")}</Link></li>
           </ul>
 
           <div className="flex gap-4">
             <ButtonNotified
-              text="FUI NOTIFICADO"
+              text={t("header.button.notified")}
               href="/notification"
               padding='px-4 py-2'
               borderRadius="rounded-full"
               className="hidden lg:block text-zinc-900 font-medium text-base"
             />
             <ButtonNotified
-              text="CONQUISTE A CERTIFICAÇÃO"
+              text={t("header.button.certification")}
               href="/certification"
               padding='px-4 py-2'
               borderRadius="rounded-full"
@@ -264,7 +264,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
                       onClick={closeMobileMenu}
                       className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
                     >
-                      INÍCIO
+                      {t("header.nav.home")}
                     </Link>
                   </li>
                   <li>
@@ -273,7 +273,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
                       onClick={closeMobileMenu}
                       className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
                     >
-                      Quem somos
+                      {t("header.mobile.about")}
                     </Link>
                   </li>
                   <li>
@@ -282,7 +282,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
                       onClick={closeMobileMenu}
                       className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
                     >
-                      CERTICAÇÃO GC
+                      {t("header.mobile.certification")}
                     </Link>
                   </li>
                   <li>
@@ -291,7 +291,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
                       onClick={closeMobileMenu}
                       className="block text-base font-medium text-zinc-900 hover:text-[#a000d6] transition-colors font-open-sans"
                     >
-                      PREMIAÇÃO
+                      {t("header.nav.award")}
                     </Link>
                   </li>
                 </ul>
@@ -299,7 +299,7 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
 
               {/* Mobile Language Selector */}
               <div className="mb-8 language-dropdown">
-                <h3 className="text-xs font-medium text-zinc-500 mb-3 font-open-sans">Idioma / Language</h3>
+                <h3 className="text-xs font-medium text-zinc-500 mb-3 font-open-sans">{t("header.mobile.language.title")}</h3>
                 <div 
                   className="space-y-2 max-h-[200px] overflow-y-auto"
                   onWheel={handleDropdownScroll}
@@ -326,14 +326,14 @@ function HeaderAward({ backgroundColor = "bg-white", logoWhite = false }: { back
 
               {/* Mobile CTA Button */}
                 <ButtonNotified
-                    text="FUI NOTIFICADO"
+                    text={t("header.button.notified")}
                     href="/notification"
                     padding='px-4 py-2'
                     borderRadius="rounded-full"
                     className="hidden lg:block text-zinc-900 font-medium text-base"
                 />
                 <ButtonNotified
-                    text="CONQUISTE A CERTIFICAÇÃO"
+                    text={t("header.button.certification")}
                     href="/certification"
                     padding='px-4 py-2'
                     borderRadius="rounded-full"
